@@ -1,0 +1,74 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "gather-helpers",
+  "title": "Gather Helpers",
+  "description": "Provides utilities for interacting with Gather through the WebSocket API",
+  "icon": "command-icon.png",
+  "author": "RJM",
+  "categories": [
+    "Productivity"
+  ],
+  "owner": "tutero",
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "API Key",
+      "description": "The API key to use when connecting to Gather.",
+      "required": true,
+      "type": "password"
+    },
+    {
+      "name": "spaceId",
+      "title": "Space ID",
+      "description": "The ID of the space to connect to.",
+      "required": true,
+      "type": "textfield"
+    },
+    {
+      "name": "allowTeleport",
+      "label": "Allow",
+      "title": "Teleportation",
+      "description": "Whether to allow teleportation to other players.",
+      "required": true,
+      "default": false,
+      "type": "checkbox"
+    }
+  ],
+  "commands": [
+    {
+      "name": "players",
+      "title": "Interact with Gather Players",
+      "subtitle": "A set of commands for interacting with Gather Players",
+      "description": "A set of commands for interacting with Gather Players",
+      "mode": "view"
+    },
+    {
+      "name": "self",
+      "title": "Interact with own Gather Player",
+      "subtitle": "A set of commands for interacting with your Gather Player",
+      "description": "A set of commands for interacting with your Gather Player",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@gathertown/gather-game-client": "^43.0.1",
+    "@raycast/api": "^1.58.0",
+    "ws": "^8.14.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
